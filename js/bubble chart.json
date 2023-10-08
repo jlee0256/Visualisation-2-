@@ -117,7 +117,7 @@
         "fontStyle": "italic"
       },
       "encoding": {
-        "text": {"field": "country", "type": "nominal"},  // Corrected field name to "country"
+        "text": {"field": "country", "type": "nominal"},  
         "color": {"value": "#777b7e"},
         "opacity": {
           "condition": {
