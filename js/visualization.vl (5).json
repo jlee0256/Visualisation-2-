@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stock prices of 5 Tech Companies over Time.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/jlee0256/Visualisation-2-/main/data/WHR_2023(2).csv"
+  },
+  "mark": "trail",
+  "encoding": {
+    "x": {
+      "field": "freedom_to_make_life_choices",
+      "type": "quantitative",
+      "title": "Freedom to make life choices"
+    },
+    "y": {
+      "field": "perceptions_of_corruption",
+      "type": "quantitative",
+      "title": "Perceptions of corruption"
+    },
+    "size": {"field": "gdp_per_capita", "type": "quantitative"},
+    "color": {"field": "continent", "type": "nominal", "title": "Continent"}
+  },
+  "config": {}
+}
