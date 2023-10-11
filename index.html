@@ -31,7 +31,7 @@
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1">
-        <h1>Multiple Visualisations</h1>
+        <h1>World Happiness in 2023</h1>
         <p>This page demonstrates how you can use pure.css grid for your layout.</p>
       </div>
     </div>
@@ -41,7 +41,7 @@
     <div class="pure-g">
       <div class="pure-u-1-2">
         <div class="description description-left">
-          <h2>Two Columns Layout</h2>
+          <h2>Social support and happiness</h2>
           <p>The first column contains text and the second column contains a visualisation.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -57,12 +57,12 @@
       <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-2">
-        <div id="vis3" class="vis-container"></div>
+        <div id="vis2" class="vis-container"></div>
       </div>
       <div class="pure-u-1-2">
         <div class="description description-left">
-          <h2>Two Columns Layout</h2>
-          <p>Top 10 Happinest Countries</p>
+          <h2>Happiness in different regions</h2>
+          <p>Top 10 Happiest Countries</p>
             <ul>
             <li>Finland - 7.804</li>
             <li>Denmark - 7.586</li>
@@ -77,14 +77,32 @@
           </ul>
         </div>
       </div>
+       <div class="pure-u-1-2">
+        <div class="description description-left">
+          <h2>Bottom 10 Happiest Countries</h2>
+          <ul>
+            <li>Afghanistan - 1.859</li>
+            <li>Lebanon - 2.392</li>
+            <li>Sierra Leone - 3.138</li>
+            <li>Zimbabwe - 3.204</li>
+            <li>Congo (Kinshasa) - 3.207</li>
+            <li>Botswana - 3.435</li>
+            <li>Malawi - 3.495</li>
+            <li>Comoros - 3.545</li>
+            <li>Tanzania - 3.694</li>
+            <li>Zambia - 3.982</li>
+          </ul>
+        </div>
+      </div>
     </div>
+  
     <!-- end pure grid group -->
 
      <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-2">
         <div class="description description-left">
-          <h2>Two Columns Layout</h2>
+          <h2>World Happiness across the globe</h2>
           <p>The first column contains text and the second column contains a visualisation.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Massa sapien faucibus et molestie ac feugiat sed. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
@@ -92,20 +110,17 @@
         </div>
       </div>
       <div class="pure-u-1-2">
-        <div id="vis2" class="vis-container"></div>
+        <div id="vis3" class="vis-container"></div>
       </div>
     </div>
-    <!-- end pure grid group -->
-
-    
     <!-- end pure grid group -->
 
   </div> <!-- end page -->
 
   <script type="text/javascript">
     var specVis1 = "js/bubble_chart.json";
-    var specVis2 = "js/choropleth_map_0.vg.json";
-    var specVis3 = "js/box_plot.json";
+    var specVis2 = "js/box_plot.json";
+    var specVis3 = "js/choropleth_map_0.vg.json";
 
     vegaEmbed('#vis1', specVis1, { "actions": false });
 
