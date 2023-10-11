@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/jlee0256/Visualisation-2-/main/data/WHR_years.csv"
+  },
+  "encoding": {
+    "x": {"field": "year", "type": "ordinal", "title": "Year"},
+    "y": {
+      "field": "happiness_score",
+      "type": "quantitative",
+      "title": "Happiness Score"
+    },
+    "color": {
+      "condition": {
+        "param": "hover",
+        "field": "continent",
+        "type": "nominal",
+        "legend": null
+      },
+      "value": "grey"
+    },
+    "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2}
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "hover",
+          "value": [{"symbol": "Europe"}],
+          "select": {
+            "type": "point",
+            "fields": ["continent"],
+            "on": "mouseover"
+          }
+        }
+      ],
+      "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent"}
+    },
+    {
+      "mark": {"type": "line", "point": true},
+      "encoding": {
+        "color": {"field": "continent", "type": "nominal", "legend": null},
+        "text": {"field": "continent", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {"view": {"stroke": null}}
+}
