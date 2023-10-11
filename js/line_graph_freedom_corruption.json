@@ -1,6 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "Stock prices of 5 Tech Companies over Time.",
+  "width": "container"
   "data": {
     "url": "https://raw.githubusercontent.com/jlee0256/Visualisation-2-/main/data/WHR_2023(2).csv"
   },
