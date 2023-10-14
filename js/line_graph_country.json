@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Happiness by country over time",
   "data": {
     "url": "https://raw.githubusercontent.com/jlee0256/Visualisation-2-/main/data/WHR_years.csv"
   },
@@ -69,7 +70,7 @@
       "encoding": {
         "x": {"field": "Year", "type": "ordinal", "title": "Year"},
         "y": {"field": "average_happiness_score", "type": "quantitative"},
-        "color": {"value": "#d45959"}
+        "color": {"value": "#f03750"}
       }
     },
     {
@@ -79,7 +80,7 @@
         "baseline": "bottom",
         "dx": 75,
         "dy": -34,
-        "color": "#d45959",
+        "color": "#f03750",
         "fontStyle": "bold",
         "fontSize": 10,
         "angle": 0
