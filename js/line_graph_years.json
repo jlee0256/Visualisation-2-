@@ -25,7 +25,7 @@
       "groupby": ["continent"]
     }
   ],
-  "title": "Average happiness by continent over time",
+  "title": "Happiness by continent over time",
   "encoding": {
     "x": {"field": "Year", "type": "ordinal", "title": "Year"},
     "y": {
