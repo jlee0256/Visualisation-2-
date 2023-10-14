@@ -4,7 +4,7 @@
   "width": "container",
   "data": {
     "values": [
-        {
+      {
         "region": "Middle East and North Africa",
         "min": 2.392,
         "q1": 4.329,
@@ -87,12 +87,15 @@
       }
     ]
   },
-  "encoding": {"y": {"field": "region", "type": "nominal", "title": null}},
+  "encoding": {
+    "y": {"field": "region", "type": "nominal", 
+    "title": "Region"}
+  },
   "layer": [
     {
       "mark": {"type": "rule"},
       "encoding": {
-        "x": {"field": "min", "type": "quantitative", "scale": {"zero": false}, "title": null},
+        "x": {"field": "min", "type": "quantitative", "scale": {"zero": false}},
         "x2": {"field": "max"},
         "tooltip": [
           {"field": "min", "type": "quantitative", "title": "Minimum"},
@@ -110,7 +113,7 @@
           "field": "region",
           "type": "nominal",
           "legend": null,
-          "scale": {"scheme": "tableau20"}
+          "scale": {"range": ["#29a2d6", "#ffa500", "#5cab6a", "#24b8bd", "#9467bd", "#fadc48", "#2f539b", "#716e9c", "#b6d9b8"]}
         },
         "tooltip": [
           {"field": "median", "type": "quantitative", "title": "Median happiness score"}
@@ -127,7 +130,7 @@
       "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 3, "color": "darkgrey", "fontSize": 9},
       "encoding": {
         "x": {"field": "max", "type": "quantitative", "title": "Happiness Score"},
-        "y": {"field": "region", "type": "nominal", "title": null},
+        "y": {"field": "region", "type": "nominal", "title": "Region"},
         "text": {"field": "maxcountry", "type": "nominal"}
       }
     }
