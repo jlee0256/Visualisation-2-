@@ -1,18 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Relationship between healthy life expectancy, freedom to make life choices and global happiness",
+  "title": "Healthy life expectancy and freedom to make life choices on global happiness",
   "width": "container",
   "repeat": {
-    "row": [
-      "happiness_score",
-      "freedom_to_make_life_choices",
-      "healthy_life_expectancy"
-    ],
-    "column": [
-      "happiness_score",
-      "freedom_to_make_life_choices",
-      "healthy_life_expectancy"
-    ]
+    "row": ["happiness_score", "freedom_to_make_life_choices", "healthy_life_expectancy"],
+    "column": ["happiness_score", "freedom_to_make_life_choices", "healthy_life_expectancy"]
   },
   "spec": {
     "data": {
@@ -43,17 +35,16 @@
     ],
     "encoding": {
       "x": {"field": {"repeat": "column"}, "type": "quantitative"},
-      "y": {
-        "field": {"repeat": "row"},
-        "type": "quantitative",
-        "axis": {"minExtent": 30}
-      },
+      "y": {"field": {"repeat": "row"}, "type": "quantitative", "axis": {"minExtent": 30}},
       "color": {
         "condition": {
           "param": "brush",
           "field": "continent",
           "type": "nominal",
-          "title": "Continent"
+          "title": "Continent",
+          "scale": {
+            "range": ["#7cdbe6", "#7b5dcf", "#2f539b", "#5cab6a", "#ffa500" , "#fadc48"]
+          }
         },
         "value": "grey"
       }
