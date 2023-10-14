@@ -1,26 +1,17 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Happiness score distribution around the world",
+  "title": "Distribution of happiness in different regions",
   "width": "container",
   "data": {
     "values": [
-      {
-        "region": "Western Europe",
-        "min": 5.931,
-        "q1": 6.228,
-        "median": 6.775,
-        "q3": 7.178,
-        "max": 7.804,
-        "outliers": []
-      },
-      {
+        {
         "region": "Middle East and North Africa",
         "min": 2.392,
         "q1": 4.329,
         "median": 5.418,
         "q3": 6.145,
         "max": 7.473,
-        "outliers": []
+        "maxcountry": "Israel"
       },
       {
         "region": "North America and ANZ",
@@ -29,7 +20,7 @@
         "median": 7.095,
         "q3": 7.109,
         "max": 7.123,
-        "outliers": []
+        "maxcountry": "New Zealand"
       },
       {
         "region": "Central and Eastern Europe",
@@ -38,7 +29,7 @@
         "median": 6.65,
         "q3": 6.845,
         "max": 7.403,
-        "outliers": []
+        "maxcountry": "Czechia"
       },
       {
         "region": "Latin America and Caribbean",
@@ -47,7 +38,7 @@
         "median": 6.265,
         "q3": 6.609,
         "max": 6.892,
-        "outliers": []
+        "maxcountry": "Costa Rica"
       },
       {
         "region": "Southeast Asia",
@@ -56,7 +47,7 @@
         "median": 6.587,
         "q3": 6.943,
         "max": 7.123,
-        "outliers": []
+        "maxcountry": "Laos"
       },
       {
         "region": "East Asia",
@@ -65,7 +56,7 @@
         "median": 6.535,
         "q3": 6.922,
         "max": 6.951,
-        "outliers": []
+        "maxcountry": "Mongolia"
       },
       {
         "region": "Commonwealth of Independent States",
@@ -74,7 +65,7 @@
         "median": 6.014,
         "q3": 6.13,
         "max": 6.144,
-        "outliers": []
+        "maxcountry": "Tajikistan"
       },
       {
         "region": "Sub-Saharan Africa",
@@ -83,7 +74,7 @@
         "median": 4.973,
         "q3": 5.418,
         "max": 5.902,
-        "outliers": []
+        "maxcountry": "Sierra Leone"
       },
       {
         "region": "South Asia",
@@ -92,7 +83,7 @@
         "median": 4.501,
         "q3": 4.555,
         "max": 5.36,
-        "outliers": []
+        "maxcountry": "Sri Lanka"
       }
     ]
   },
@@ -101,13 +92,13 @@
     {
       "mark": {"type": "rule"},
       "encoding": {
-        "x": {
-          "field": "min",
-          "type": "quantitative",
-          "scale": {"zero": false},
-          "title": null
-        },
-        "x2": {"field": "max"}
+        "x": {"field": "min", "type": "quantitative", "scale": {"zero": false}, "title": null},
+        "x2": {"field": "max"},
+        "tooltip": [
+          {"field": "min", "type": "quantitative", "title": "Minimum"},
+          {"field": "max", "type": "quantitative", "title": "Maximum"},
+          {"field": "maxcountry", "type": "nominal", "title": "Country with Max Happiness"}
+        ]
       }
     },
     {
@@ -120,17 +111,25 @@
           "type": "nominal",
           "legend": null,
           "scale": {"scheme": "tableau20"}
-        }
+        },
+        "tooltip": [
+          {"field": "median", "type": "quantitative", "title": "Median happiness score"}
+        ]
       }
     },
     {
       "mark": {"type": "tick", "color": "white", "size": 14},
-      "encoding": {"x": {"field": "median", "type": "quantitative"}}
+      "encoding": {
+        "x": {"field": "median", "type": "quantitative"}
+      }
     },
     {
-      "transform": [{"flatten": ["outliers"]}],
-      "mark": {"type": "point", "style": "boxplot-outliers"},
-      "encoding": {"x": {"field": "outliers", "type": "quantitative"}}
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 3, "color": "darkgrey", "fontSize": 9},
+      "encoding": {
+        "x": {"field": "max", "type": "quantitative", "title": "Happiness Score"},
+        "y": {"field": "region", "type": "nominal", "title": null},
+        "text": {"field": "maxcountry", "type": "nominal"}
+      }
     }
   ],
   "config": {}
