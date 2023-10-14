@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Impact of social happiness on global happiness",
+  "title": "Social support on global happiness",
   "width": "container",
   "data": {
     "url": "https://raw.githubusercontent.com/jlee0256/Visualisation-2-/main/data/WHR_2023(2).csv"
@@ -86,11 +86,11 @@
               "Oceania"
             ],
             "range": [
-              "#1f6357",
-              "#ff5f00",
+              "#5cab6a",
+              "#fadc48",
               "#2f539b",
-              "#9e7bb5",
-              "#78c7c7",
+              "#7cdbe6",
+              "#7b5dcf",
               "#ffa500"
             ]
           }
