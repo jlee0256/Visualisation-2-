@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Happiness across the world",
+  "title": "Happiness around the globe",
   "width": "container",
   "params": [ 
     {
