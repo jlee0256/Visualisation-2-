@@ -1,0 +1,80 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/jlee0256/Visualisation-2-/main/data/WHR_years.csv"
+  },
+  "transform": [
+    {
+      "aggregate": [
+        {
+          "op": "mean",
+          "field": "happiness_score",
+          "as": "average_happiness_score"
+        }
+      ],
+      "groupby": ["Year", "continent"]
+    },
+    {
+      "window": [
+        {
+          "op": "max",
+          "field": "average_happiness_score",
+          "as": "max_happiness_score"
+        }
+      ],
+      "groupby": ["continent"]
+    }
+  ],
+  "title": "Average happiness by continent over time",
+  "encoding": {
+    "x": {"field": "Year", "type": "ordinal", "title": "Year"},
+    "y": {
+      "field": "average_happiness_score",
+      "scale": {"domain": [4, 7.5]},
+      "type": "quantitative",
+      "title": "Average happiness score"
+    },
+    "color": {
+      "condition": {
+        "param": "hover",
+        "field": "continent",
+        "type": "nominal",
+        "legend": null
+      },
+      "value": "grey"
+    },
+    "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.2}
+  },
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "hover",
+          "value": [{"continent": "South America"}],
+          "select": {
+            "type": "point",
+            "fields": ["continent"],
+            "on": "mouseover"
+          }
+        }
+      ],
+      "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent"}
+    },
+    {"mark": "line"},
+    {
+      "transform": [{"filter": {"field": "Year", "equal": 2023}}],
+      "encoding": {
+        "x": {"aggregate": "max", "field": "Year"},
+        "y": {"field": "max_happiness_score"}
+      },
+      "layer": [
+        {"mark": {"type": "circle"}},
+        {
+          "mark": {"type": "text", "align": "left", "dx": 10},
+          "encoding": {"text": {"field": "continent", "type": "nominal"}}
+        }
+      ]
+    }
+  ],
+  "config": {"view": {"stroke": null}}
+}
