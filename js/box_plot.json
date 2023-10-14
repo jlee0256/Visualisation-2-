@@ -88,8 +88,7 @@
     ]
   },
   "encoding": {
-    "y": {"field": "region", "type": "nominal", 
-    "title": "Region"}
+    "y": {"field": "region", "type": "nominal", "title": "Region"}
   },
   "layer": [
     {
@@ -99,6 +98,9 @@
         "x2": {"field": "max"},
         "tooltip": [
           {"field": "min", "type": "quantitative", "title": "Minimum"},
+          {"field": "q1", "type": "quantitative", "title": "Q1 (First Quartile)"},
+          {"field": "median", "type": "quantitative", "title": "Median"},
+          {"field": "q3", "type": "quantitative", "title": "Q3 (Third Quartile)"},
           {"field": "max", "type": "quantitative", "title": "Maximum"},
           {"field": "maxcountry", "type": "nominal", "title": "Country with Max Happiness"}
         ]
@@ -116,7 +118,9 @@
           "scale": {"range": ["#29a2d6", "#ffa500", "#5cab6a", "#24b8bd", "#9467bd", "#fadc48", "#2f539b", "#716e9c", "#b6d9b8"]}
         },
         "tooltip": [
-          {"field": "median", "type": "quantitative", "title": "Median happiness score"}
+          {"field": "min", "type": "quantitative", "title": "Minimum"},
+          {"field": "median", "type": "quantitative", "title": "Median"},
+          {"field": "max", "type": "quantitative", "title": "Maximum"}
         ]
       }
     },
