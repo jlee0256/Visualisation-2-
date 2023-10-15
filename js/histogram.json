@@ -1,70 +1,70 @@
 {
-  "data": {
-    "url": "https://raw.githubusercontent.com/jlee0256/Visualisation-2-/main/data/WHR_years.csv"
-  },
-  "width": "container",
-  "height": "container",
-  "title": "Perceptions of corruption on global happiness",
-  "layer": [
-    {
-      "mark": {"type": "bar", "color": "#29a2d6"},
-      "encoding": {
-        "x": {
-          "bin": {"maxbins": 10},
-          "field": "perceptions_of_corruption",
-          "axis": {"format": ".1f"},
-          "title": "Perceptions of corruption"
-        },
-        "y": {
-          "aggregate": "average",
-          "field": "happiness_score",
-          "scale": {"domain": [4.5, 7]},
-          "title": "Happiness score"
-        }
-      }
+    "data": {
+      "url": "https://raw.githubusercontent.com/jlee0256/Visualisation-2-/main/data/WHR_years.csv"
     },
-    {
-      "mark": {"type": "line", "color": "#f03750"},
-      "encoding": {
-        "x": {
-          "bin": {"maxbins": 10},
-          "field": "perceptions_of_corruption",
-          "axis": {"format": ".1f"},
-          "title": "Perceptions of corruption"
-        },
-        "y": {
-          "aggregate": "average",
-          "field": "happiness_score",
-          "title": "Happiness score",
-          "scale": {"domain": [4.5, 7]}
-        }
-      }
-    },
-    {
-      "mark": {"type": "circle", "color": "#f03750", "opacity": 1, "size": 30},
-      "encoding": {
-        "x": {
-          "bin": {"maxbins": 10},
-          "field": "perceptions_of_corruption",
-          "axis": {"format": ".1f"},
-          "title": "Perceptions of corruption"
-        },
-        "y": {
-          "aggregate": "average",
-          "field": "happiness_score",
-          "title": "Happiness score",
-          "scale": {"domain": [4.5, 7]}
-        },
-        "tooltip": [
-          {
+    "width": 400,
+    "height": 270,
+    "title": "Perceptions of corruption on global happiness",
+    "layer": [
+      {
+        "mark": {"type": "bar", "color": "#29a2d6"},
+        "encoding": {
+          "x": {
+            "bin": {"maxbins": 10},
+            "field": "perceptions_of_corruption",
+            "axis": {"format": ".1f"},
+            "title": "Perceptions of corruption"
+          },
+          "y": {
             "aggregate": "average",
             "field": "happiness_score",
-            "title": "Average happiness score",
-            "format": ".2f"
+            "scale": {"domain": [4.5, 7]},
+            "title": "Happiness score"
           }
-        ]
+        }
+      },
+      {
+        "mark": {"type": "line", "color": "#f03750"},
+        "encoding": {
+          "x": {
+            "bin": {"maxbins": 10},
+            "field": "perceptions_of_corruption",
+            "axis": {"format": ".1f"},
+            "title": "Perceptions of corruption"
+          },
+          "y": {
+            "aggregate": "average",
+            "field": "happiness_score",
+            "title": "Happiness score",
+            "scale": {"domain": [4.5, 7]}
+          }
+        }
+      },
+      {
+        "mark": {"type": "circle", "color": "#f03750", "opacity": 1, "size": 30},
+        "encoding": {
+          "x": {
+            "bin": {"maxbins": 10},
+            "field": "perceptions_of_corruption",
+            "axis": {"format": ".1f"},
+            "title": "Perceptions of corruption"
+          },
+          "y": {
+            "aggregate": "average",
+            "field": "happiness_score",
+            "title": "Happiness score",
+            "scale": {"domain": [4.5, 7]}
+          },
+          "tooltip": [
+            {
+              "aggregate": "average",
+              "field": "happiness_score",
+              "title": "Average happiness score",
+              "format": ".2f"
+            }
+          ]
+        }
       }
-    }
-  ],
-  "config": {}
-}
+    ],
+    "config": {}
+  }
