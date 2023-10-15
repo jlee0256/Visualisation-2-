@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Distribution of happiness in different regions",
-  "width": "container",
+  "width": 350,
+  "height": 265,
   "data": {
     "values": [
       {
