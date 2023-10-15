@@ -1,12 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Healthy life expectancy and freedom to make life choices on global happiness",
-  "width": "container",
   "repeat": {
     "row": ["happiness_score", "freedom_to_make_life_choices", "healthy_life_expectancy"],
     "column": ["happiness_score", "freedom_to_make_life_choices", "healthy_life_expectancy"]
   },
   "spec": {
+    "width": 120,
+    "height": 120, 
     "data": {
       "url": "https://raw.githubusercontent.com/jlee0256/Visualisation-2-/main/data/WHR_years.csv"
     },
