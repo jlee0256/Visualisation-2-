@@ -1,114 +1,116 @@
 {
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Happiness by country over time",
-  "data": {
-    "url": "https://raw.githubusercontent.com/jlee0256/Visualisation-2-/main/data/WHR_years.csv"
-  },
-  "params": [
-    {
-      "name": "search_input",
-      "bind": {
-        "input": "text",
-        "placeholder": "Search Country",
-        "name": "Country"
-      },
-      "value": ""
-    }
-  ],
-  "layer": [
-    {
-      "mark": "line",
-      "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "ordinal",
-          "title": "Year",
-          "axis": {"tickCount": 10}
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Happiness by country over time",
+    "width": 380,
+    "height": 350,
+    "data": {
+      "url": "https://raw.githubusercontent.com/jlee0256/Visualisation-2-/main/data/WHR_years.csv"
+    },
+    "params": [
+      {
+        "name": "search_input",
+        "bind": {
+          "input": "text",
+          "placeholder": "Search Country",
+          "name": "Country"
         },
-        "y": {
-          "field": "happiness_score",
-          "type": "quantitative",
-          "title": "Happiness score"
-        },
-        "color": {
-          "field": "country",
-          "type": "nominal",
-          "title": null,
-          "legend": null
-        },
-        "tooltip": [
-          {
+        "value": ""
+      }
+    ],
+    "layer": [
+      {
+        "mark": "line",
+        "encoding": {
+          "x": {
+            "field": "Year",
+            "type": "ordinal",
+            "title": "Year",
+            "axis": {"tickCount": 10}
+          },
+          "y": {
             "field": "happiness_score",
             "type": "quantitative",
-            "title": "Happiness Score"
+            "title": "Happiness score"
           },
-          {"field": "Year", "type": "ordinal", "title": "Year"}
-        ],
-        "opacity": {
-          "condition": {
-            "test": "indexof(search_input, datum.country) >= 0",
-            "value": 0.8
+          "color": {
+            "field": "country",
+            "type": "nominal",
+            "title": null,
+            "legend": null
           },
-          "value": 0
-        }
-      }
-    },
-    {
-      "transform": [
-        {
-          "aggregate": [
+          "tooltip": [
             {
-              "op": "mean",
               "field": "happiness_score",
-              "as": "average_happiness_score"
-            }
+              "type": "quantitative",
+              "title": "Happiness Score"
+            },
+            {"field": "Year", "type": "ordinal", "title": "Year"}
           ],
-          "groupby": ["Year"]
+          "opacity": {
+            "condition": {
+              "test": "indexof(search_input, datum.country) >= 0",
+              "value": 0.8
+            },
+            "value": 0
+          }
         }
-      ],
-      "mark": "line",
-      "encoding": {
-        "x": {"field": "Year", "type": "ordinal", "title": "Year"},
-        "y": {"field": "average_happiness_score", "type": "quantitative"},
-        "color": {"value": "#f03750"}
-      }
-    },
-    {
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "bottom",
-        "dx": 75,
-        "dy": -34,
-        "color": "#f03750",
-        "fontStyle": "bold",
-        "fontSize": 10,
-        "angle": 0
       },
-      "encoding": {"text": {"value": "Global trend"}}
-    },
-    {
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "bottom",
-        "dx": 75,
-        "dy": -23,
-        "color": "#aba7ab",
-        "fontStyle": "italic",
-        "fontSize": 9,
-        "angle": 0
+      {
+        "transform": [
+          {
+            "aggregate": [
+              {
+                "op": "mean",
+                "field": "happiness_score",
+                "as": "average_happiness_score"
+              }
+            ],
+            "groupby": ["Year"]
+          }
+        ],
+        "mark": "line",
+        "encoding": {
+          "x": {"field": "Year", "type": "ordinal", "title": "Year"},
+          "y": {"field": "average_happiness_score", "type": "quantitative"},
+          "color": {"value": "#f03750"}
+        }
       },
-      "encoding": {
-        "text": {
-          "value": [
-            "Increasing over  6 years",
-            "with a happiness score",
-            "between the range 5 - 5.5"
-          ]
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "bottom",
+          "dx": 200,
+          "dy": -40,
+          "color": "#f03750",
+          "fontStyle": "bold",
+          "fontSize": 10,
+          "angle": 0
+        },
+        "encoding": {"text": {"value": "Global trend"}}
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "baseline": "bottom",
+          "dx": 200,
+          "dy": -23,
+          "color": "#aba7ab",
+          "fontStyle": "italic",
+          "fontSize": 9,
+          "angle": 0
+        },
+        "encoding": {
+          "text": {
+            "value": [
+              "Increasing over  6 years",
+              "with a happiness score",
+              "between the range 5 - 5.5"
+            ]
+          }
         }
       }
-    }
-  ],
-  "config": {}
-}
+    ],
+    "config": {}
+  }
